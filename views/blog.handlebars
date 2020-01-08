@@ -1,0 +1,17 @@
+<h1>My Blog</h1>
+<ul class="post_list">
+  {{#each posts}}
+    <li><h2>{{this.title}}</h2>
+    <div class="date">{{date}}</div>
+    {{this.content}}
+    </li>
+  {{/each}}
+</ul>
+<section class="pagination">
+  {{#if previous}}
+  <a href="/posts?page={{previous.page}}&limit={{previous.limit}}&sort={{previous.sortBy}}">Show Previous</a>
+  {{/if}}
+  {{#if next}}
+  <a href="/posts?page={{next.page}}&limit={{next.limit}}&sort={{next.sortBy}}">Show More</a>
+  {{/if}}
+</section>
